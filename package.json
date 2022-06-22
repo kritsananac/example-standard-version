@@ -1,0 +1,19 @@
+{
+  "name": "example-standard-version",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kritsananac/example-standard-version.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kritsananac/example-standard-version/issues"
+  },
+  "homepage": "https://github.com/kritsananac/example-standard-version#readme"
+}
