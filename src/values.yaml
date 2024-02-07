@@ -1,0 +1,55 @@
+service:
+  name: "lxp-web"
+  port: 80
+ingress:
+  ExternalClassName: "public-ingress-nginx"
+  InternalClassName: "private-ingress-nginx"
+  annotations:
+    nginx.ingress.kubernetes.io/permanent-redirect-code: '301'
+    nginx.ingress.kubernetes.io/proxy-body-size: 6114m
+    nginx.ingress.kubernetes.io/ssl-redirect: 'true'
+    nginx.ingress.kubernetes.io/use-regex: 'true'
+    nginx.ingress.kubernetes.io/configuration-snippet: |
+      if ($request_uri ~* \.(?:woff)$) { 
+        expires 2d;
+        add_header Cache-Control public;
+        access_log off;
+      }
+
+      if ($request_uri ~* \.(?:ttf)$) { 
+        expires 2d;
+        add_header Cache-Control public;
+        access_log off;
+      }
+
+
+      add_header etag off;
+
+      add_header Last-Modified $date_gmt;
+
+      add_header Cache-Control 'no-store, no-cache, must-revalidate,
+      proxy-revalidate, max-age=0';
+
+      if_modified_since off;
+
+      expires off;
+
+      if ($host = 'rbbpk.skilllane.com') {
+
+      return 301 https://reckittthailand.skilllane.com;
+
+      }
+  tls:
+    secretName: "skilllane-net-wildcard-certificate"
+    hosts:
+      - "*.skilllane.net"
+      - "skilllane.net"
+  hostsExternal:
+    - "mc-1.skilllane.net"
+    - "mc-2.skilllane.net"
+    - "mc-3.skilllane.net"
+    - "test1234.skilllane.net"
+  hostsInternal:
+    - "mc-6.skilllane.net"
+    - "mc-7.skilllane.net"
+    - "mc-8.skilllane.net"
