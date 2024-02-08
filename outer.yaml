@@ -1,6 +1,11 @@
-name: 'outer-yaml'
+name: outer-yaml
 test:
-  list: [1,2,3,4]
-  text: "Text"
+  list:
+    - 1
+    - 2
+    - 3
+    - 4
+  text: Text
 test2:
-  message: "Message"
+  message: Message
+someKey: new value, 1707380867603
