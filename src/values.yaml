@@ -49,8 +49,9 @@ ingress:
     - mc-2.skilllane.net
     - mc-3.skilllane.net
     - test1234.skilllane.net
+    - develop-web-lxp-2.skilllane.net
   hostsInternal:
     - mc-6.skilllane.net
     - mc-7.skilllane.net
     - mc-8.skilllane.net
-someKey: new value, 1707382182485
+someKey: new value, 1707382267172
