@@ -53,6 +53,7 @@ ingress:
     - develop-web-lxp-2.skilllane.net
     - develop-web-lxp-2.skilllane.net
     - develop-web-lxp-2.skilllane.net
+    - develop-web-lxp-2.skilllane.net
   hostsInternal:
     - mc-6.skilllane.net
     - mc-7.skilllane.net
