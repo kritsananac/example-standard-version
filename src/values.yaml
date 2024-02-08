@@ -1,9 +1,9 @@
 service:
-  name: "lxp-web"
+  name: lxp-web
   port: 80
 ingress:
-  ExternalClassName: "public-ingress-nginx"
-  InternalClassName: "private-ingress-nginx"
+  ExternalClassName: public-ingress-nginx
+  InternalClassName: private-ingress-nginx
   annotations:
     nginx.ingress.kubernetes.io/permanent-redirect-code: '301'
     nginx.ingress.kubernetes.io/proxy-body-size: 6114m
@@ -40,16 +40,17 @@ ingress:
 
       }
   tls:
-    secretName: "skilllane-net-wildcard-certificate"
+    secretName: skilllane-net-wildcard-certificate
     hosts:
-      - "*.skilllane.net"
-      - "skilllane.net"
+      - '*.skilllane.net'
+      - skilllane.net
   hostsExternal:
-    - "mc-1.skilllane.net"
-    - "mc-2.skilllane.net"
-    - "mc-3.skilllane.net"
-    - "test1234.skilllane.net"
+    - mc-1.skilllane.net
+    - mc-2.skilllane.net
+    - mc-3.skilllane.net
+    - test1234.skilllane.net
   hostsInternal:
-    - "mc-6.skilllane.net"
-    - "mc-7.skilllane.net"
-    - "mc-8.skilllane.net"
+    - mc-6.skilllane.net
+    - mc-7.skilllane.net
+    - mc-8.skilllane.net
+someKey: new value, 1707382182485
